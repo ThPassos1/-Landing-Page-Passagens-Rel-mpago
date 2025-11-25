@@ -1,0 +1,850 @@
+/* =========================
+   RESET GLOBAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* =========================
+   HERO PRINCIPAL
+========================= */
+
+.hero {
+    position: relative;
+    background: #050608 url("images/BACKGROUND.png") center top / cover no-repeat;
+    color: #ffffff;
+
+    /* vinheta moderada */
+    box-shadow: inset 0 0 180px rgba(0, 0, 0, 0.8),
+                inset 0 0 260px rgba(0, 0, 0, 0.6);
+}
+
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 15%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,0.95) 100%);
+    pointer-events: none;
+}
+
+.hero-inner {
+    position: relative;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 28px 18px 90px;
+    z-index: 1;
+}
+
+/* =========================
+   TOPO DO HERO
+========================= */
+
+.hero-top {
+   display: flex;
+    justify-content: center; 
+    gap: 20px; /* distância entre as duas logos */
+}
+
+.logo {
+   height: 54px !important;
+    margin-right: 20px !important;
+}
+
+.bf-top {
+    height: 70px !important;
+    margin-left: 20px !important;
+}
+
+/* =========================
+   GRID PRINCIPAL
+========================= */
+
+.hero-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 420px;
+}
+
+/* =========================
+   LADO ESQUERDO
+========================= */
+
+.hero-left {
+    flex: 0 0 52%;
+    position: relative;
+}
+
+.hero-art {
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.65))
+            drop-shadow(0 6px 14px rgba(0,0,0,0.55));
+}
+
+
+.hero-mala {
+    width: 120%;
+    height: auto;
+    transform: scale(1.12);  /* aumenta a mala sem afetar layout */
+    transform-origin: center top; /* mantém alinhamento perfeito */
+}
+
+/* Nuvens animadas */
+.cloud {
+    opacity: 0.85;
+    animation: cloudFloat 22s ease-in-out infinite alternate;
+}
+
+/* Nuvem grande — deve ficar logo abaixo da mala */
+/* NÚVEN GRANDE — logo abaixo da mala */
+/* NUVEM GRANDE — subir um pouco e mover levemente */
+/* NUVEM GRANDE — subir um pouco + aumentar 2% */
+.cloud-1 {
+    position: absolute;
+    top: 120%;      /* ajuste aqui para descer */
+    left: 6%;
+    width: 55%;
+    opacity: 0.95;
+}
+
+/* NUVEM MÉDIA — subir 2% + aumentar 4% */
+.cloud-2 {
+position: absolute;
+    top: 220%;            /* desce bastante */
+    left: 150%;           /* puxa para a esquerda */
+    width: 40%;          /* diminui um pouco */
+    opacity: 0.90;
+    z-index: 1;
+}
+
+
+
+/* =========================
+   LADO DIREITO
+========================= */
+
+.hero-right {
+    align-self: flex-start; /* libera a coluna direita para descer */
+    width: 360px; /* largura igual do texto e do botão */
+}
+
+
+.hero-icons-title {
+    margin-bottom: -110px; /* desce bastante */
+    margin-left: -20px;    /* alinhamento horizontal fino */
+}
+
+.whats-icons {
+    max-width: 550px;
+    margin-top: 0;
+    margin-bottom: -20px;
+    animation: iconFloat 3.4s ease-in-out infinite;
+}
+
+
+.grupo-exclusivo {
+    display: block;
+    margin: -150px 0 0 -8px; /* cola a imagem no título azul */
+    max-width: 380px;       /* deixa maior como no mockup */
+    filter: drop-shadow(0 0 12px rgba(0,255,200,0.35));
+    animation: iconFloat 3.8s ease-in-out infinite;
+    
+}
+
+
+.hero-text {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 20px; /* era 14px */
+    line-height: 1.6;
+    color: #2FF5FF;  /* mais claro */
+    font-weight: 500;
+    text-align: justify;
+    text-justify: inter-word;
+    width: 360px; /* ajuste exatamente igual ao modelo */
+    line-height: 1.18; /* aproxima do layout do cliente */
+    margin-bottom: 18px; /* espaço igual entre os parágrafos */
+}
+
+.hero-text span {
+    white-space: nowrap;
+}
+
+.hero-text-main {
+    text-align: justify;
+    text-justify: inter-word;
+    margin-top: 200px; /* desce os textos */
+    font-weight: 700; /* mais forte */
+    color: #28E8F7;   /* mais brilho */
+    
+}
+
+
+/* Ajusta o segundo parágrafo para ficar igual ao primeiro */
+.hero-text-sub {
+    text-align: justify;
+    text-justify: inter-word;
+    margin-top: 500px; /* desce os textos */
+    font-size: 20px;        /* igual ao hero-text-main */
+    margin-bottom: 30px !important;
+    line-height: 1.35 !important;
+    color: #28E8F7;         /* deixa mais brilhante */
+    font-weight: 700;       /* igual ao texto acima */
+    margin-top: 10px;       /* mais espaçamento */
+    white-space: normal;
+    
+}
+
+.hero-text-sub span.destaque {
+    white-space: nowrap !important;
+    display: inline-block !important;
+    margin: 0 2px;
+}
+
+
+.manaus-am {
+    color: #2bff88;
+    font-weight: 900;
+    text-shadow: 0 0 10px rgba(0,234,255,0.55);
+}
+
+
+.destaque {
+    background: #2bff88;
+    color: #000000;
+    font-weight: 700;
+    padding: 0 4px;
+    border-radius: 2px;
+}
+
+/* BOTÃO AMARELO PRINCIPAL */
+
+.btn-yellow {
+    display: inline-block;;
+    width: 100%; 
+    text-align: center;
+    text-decoration: none !important;
+    margin-top: 20px !important; /* separação correta entre texto e botão */
+    margin-bottom: 6px;
+    padding: 12px 24px;; /* botão mais alto e confortável */
+    font-size: 22px;    /* texto maior */
+    font-weight: 700;   /* peso idêntico ao mockup */
+    letter-spacing: 0.5px;
+
+    background: #F7D000;
+    color: #000000 !important; /* TEXTO PRETO */
+    border: 2px solid #000;
+    border-radius: 8px;
+
+     box-shadow:
+         0 0 15px rgba(247,208,0,0.45);
+
+    transition: 0.18s ease;
+}
+
+.btn-yellow:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow:
+        0 6px 18px rgba(255, 200, 0, 0.50),
+        0 0 16px rgba(255, 200, 0, 0.65),
+        inset 0 0 8px rgba(255, 255, 255, 0.5);
+        
+}
+
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.form-section {
+    width: 100%;
+    padding: 90px 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+.form-inner {
+    padding: 26px 20px;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(4px);
+    border: 3px solid rgba(0,255,120,0.40);
+    box-shadow: 0 0 26px rgba(0,255,120,0.15);
+    max-width: 600px;
+    width: 100%;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form label {
+    font-size: 12px;
+    color: #d0d0d0;
+    font-weight: 600;
+}
+
+.form input {
+    padding: 13px 15px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 3px solid #00ff6a;
+    color: #fff;
+    font-size: 14px;
+
+    /* neon elegante */
+    box-shadow: 0 0 12px rgba(0,255,120,0.35);
+}
+
+.form input:focus {
+    background: rgba(0, 0, 0, 0.55);
+    border-color: #3bff9d;
+    box-shadow: 0 0 18px rgba(0,255,120,0.55);
+}
+
+.form-box input {
+    width: 100%;
+    background: transparent;
+    border: 2px solid #00ffb7;   /* VERDE NEON */
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 18px;
+    color: #ffffff;
+    font-size: 18px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-box input::placeholder {
+    color: #00ffb7;
+    opacity: 0.75;
+}
+
+.form-box input:hover,
+.form-box input:focus {
+    border-color: #39ffc6;
+    box-shadow: 0 0 12px rgba(0, 255, 183, 0.65);
+}
+
+
+/* BOTÃO VERDE */
+
+.btn-green {
+    margin-top: 20px;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 900;
+
+    background: linear-gradient(to bottom, #00ff6a, #00e961);
+    border: 2px solid #00551d;
+    border-radius: 6px;
+
+    box-shadow: 0 6px 14px rgba(0,255,120,0.35);
+}
+
+.btn-green:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(0,255,106,0.8);
+    filter: brightness(1.05);
+}
+
+.form-feedback {
+    min-height: 18px;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.form-feedback.ok {
+    color: #4ade80;
+}
+
+.form-feedback.error {
+    color: #fb7185;
+}
+
+.form-terms {
+    margin-top: 10px;
+    font-size: 10px;
+    color: #cfcfcf;
+    line-height: 1.4;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.footer {
+    background: #000000;
+    padding-bottom: 28px;
+    
+}
+
+.footer-bar {
+    position: relative;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.footer-bg {
+    width: 100%;
+    display: block;
+}
+
+.footer-plane {
+    position: absolute;
+    top: -46px;
+    left: 10%;
+    width: 26%;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: -230px;
+    opacity: 0.92;
+}
+
+/* =========================
+   BOTÃO FLUTUANTE MOBILE
+========================= */
+
+.btn-float-mobile {
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    background: #FFD400;
+    color: #000;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: 999px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.7);
+    display: none; /* só aparece em mobile */
+    z-index: 40;
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes iconFloat {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes cloudFloat {
+    0%   { transform: translateX(0px); }
+    100% { transform: translateX(18px); }
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1040px) {
+    .hero-main {
+        gap: 30px;
+    }
+
+    .hero-art {
+        max-width: 460px;
+    }
+
+    .grupo-exclusivo {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .hero-main {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .hero-left,
+    .hero-right {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .hero-right {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .hero-art {
+        margin: 0 auto;
+    }
+
+    .hero-icons-title {
+        margin-top: 0;
+        margin-bottom: -40px;
+        text-align: center;
+    }
+
+    .whats-icons {
+        max-width: 360px;
+        margin: 0 auto -16px;
+    }
+
+    .grupo-exclusivo {
+        max-width: 320px;
+        margin: -90px auto 0;
+    }
+
+    .hero-text {
+        width: 100%;
+        font-size: 18px;
+        line-height: 1.35;
+        text-align: justify;
+        text-justify: inter-word;
+        margin-bottom: 14px;
+    }
+
+    .hero-text-main {
+        margin-top: 24px;    /* tira aquele 200px gigante no mobile */
+    }
+
+    .hero-text-sub {
+        margin-top: 8px;
+        margin-bottom: 20px !important;
+    }
+
+    .btn-yellow {
+        width: 100%;
+        max-width: 360px;
+        margin: 18px auto 0;
+    }
+
+    .footer-plane {
+        width: 40%;
+        left: 6%;
+        top: -34px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .logo {
+        height: 52px;
+    }
+
+    .bf-top {
+        height: 64px;
+    }
+
+    .hero-inner {
+        padding: 20px 16px 50px;
+    }
+
+    .hero-main {
+        gap: 20px;
+    }
+
+    .hero-right {
+        max-width: 380px;
+    }
+
+    .hero-art {
+        max-width: 340px;
+    }
+
+    .btn-yellow {
+        font-size: 18px;
+        padding: 11px 18px;
+    }
+
+    /* botão flutuante aparece apenas aqui */
+    .btn-float-mobile {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Reduz espaço entre o título gigante e o texto */
+    .hero-text-main {
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
+        font-size: 17px !important;
+        line-height: 1.35 !important;
+    }
+
+    .hero-text-sub {
+        margin-top: 18px !important;
+        margin-bottom: 20px !important;
+        text-align: center !important;
+        font-size: 16px !important;
+        line-height: 1.35 !important;
+    }
+
+    /* Faz o bloco de texto ficar mais compacto */
+    .hero-text {
+        padding: 0 14px;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center !important;
+    }
+
+    /* Botão 100% centralizado e com respiro adequado */
+    .btn-yellow {
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+        width: 90% !important;
+        max-width: 360px;
+        font-size: 17px !important;
+        padding: 14px 10px !important;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    
+
+    .hero-inner {
+        padding: 20px 12px 50px;
+    }
+
+    .hero-art {
+        max-width: 320px;
+    }
+
+    .cloud-1 {
+        bottom: -10%;
+        left: -12%;
+        width: 70%;
+    }
+
+    .cloud-2 {
+        top: 6%;
+        right: -18%;
+        width: 40%;
+    }
+
+    .footer-plane {
+        width: 52%;
+        left: 10%;
+        top: -30px;
+    }
+
+    .footer-text {
+        font-size: 11px;
+    }
+}
+
+
+/* Tablets grandes – até 1024px */
+@media (max-width: 1024px) {
+
+}
+
+/* Tablets – até 900px */
+@media (max-width: 900px) {
+
+}
+
+/* Smartphones grandes – até 768px */
+@media (max-width: 768px) {
+
+}
+
+/* Smartphones médios – até 600px */
+@media (max-width: 600px) {
+
+}
+
+/* Smartphones pequenos – até 480px */
+@media (max-width: 480px) {
+
+}
+
+/* Mini devices – até 380px */
+@media (max-width: 380px) {
+
+}
+
+/* ========================
+   ITEM 1 – MALA + NUVENS
+   ======================== */
+@media (max-width: 768px) {
+
+    .hero-left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-mala {
+        width: 90% !important;
+        transform: scale(1) !important; /* remove aumento no mobile */
+        margin: 0 auto;
+    }
+
+    /* nuvem grande */
+    .cloud-1 {
+         top: 140% !important;
+        left: 18% !important;
+        width: 68% !important;
+    }
+
+    /* nuvem pequena */
+    .cloud-2 {
+     top: 175% !important;
+        left: 62% !important;
+        width: 32% !important;
+    }
+}
+
+/* ============================
+   AJUSTE FINAL DAS NUVENS - MOBILE
+============================= */
+@media (max-width: 768px) {
+
+    .hero-icons-title {
+        margin-bottom: 0 !important;
+        margin-top: -40px !important;  /* sobe o título */
+        text-align: center;
+    }
+
+    .grupo-exclusivo {
+        max-width: 82% !important;      /* aumenta como no modelo */
+        margin: 0 auto !important;      /* centraliza */
+        margin-top: -80px !important;   /* puxa para cima */
+    }
+}
+/* ============================
+   AJUSTE FINAL DAS NUVENS – MOBILE
+=============================== */
+
+@media (max-width: 768px) {
+
+    .cloud-1 {
+        top: 140% !important;
+        left: 18% !important;
+        width: 68% !important;
+    }
+
+    .cloud-2 {
+        top: 175% !important;
+        left: 62% !important;
+        width: 32% !important;
+    }
+}
+
+
+    /* NUVEM GRANDE — manter */
+    .cloud-1 {
+        top: 138% !important;
+        left: 18% !important;
+        width: 68% !important;
+    }
+
+    /* NUVEM PEQUENA — ajuste fino final */
+    .cloud-2 {
+        top: 168% !important;   /* desce 10% */
+        left: 84% !important;   /* posição horizontal perfeita */
+        width: 30% !important;  /* tamanho correto */
+        opacity: 0.90 !important;
+    }
+
+    /* AJUSTE FINO DO TOPO – PRIORIDADE MÁXIMA */
+.hero-top {
+    margin-top: -10px !important;   /* sobe tudo */
+    margin-bottom: 0px !important;  /* remove espaço embaixo */
+    padding-top: 0 !important;
+}
+
+.logo {
+    height: 56px !important;        /* aproxima levemente */
+}
+
+.bf-top {
+    height: 72px !important;        /* aproxima sem quebrar */
+    margin-top: -6px !important;    /* cola no topo */
+}
+
+/* SUBIR CONTEÚDO DO HERO EM TELA GRANDE */
+@media (min-width: 769px) {
+    .hero-main {
+        margin-top: 20px !important; /* sobe bloco inteiro */
+    }
+}
+@media (max-width: 768px) {
+    .hero-mala {
+        display: none !important;
+    }
+}
+
+/* ===========================
+   AJUSTE DAS LOGOS NO MOBILE
+   =========================== */
+@media (max-width: 768px) {
+
+    .hero-top {
+        display: flex;
+        align-items: center;
+        justify-content: center !important; /* centraliza as duas */
+        gap: 12px !important; /* aproxima mais */
+        margin-bottom: 4px !important; 
+    }
+
+    .logo {
+        height: 46px !important;    /* tamanho ideal no mobile */
+        margin-right: 0 !important; /* zera afastamento */
+    }
+
+    .bf-top {
+        height: 56px !important;    /* proporcional à outra */
+        margin-left: 0 !important;  /* zera afastamento */
+    }
+}
+
+
+
+
+
+

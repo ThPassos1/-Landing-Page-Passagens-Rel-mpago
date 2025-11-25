@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passagens Relâmpago - Grupo Exclusivo</title>
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+    <!-- ================= HERO ================= -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-inner">
+
+            <!-- Topo: Logo + Black Friday -->
+            <div class="hero-top">
+                <img src="images/logo-passagens-relampago.png" class="logo" alt="Agência Passagens Relâmpago">
+                <img src="images/avatar-black-friday.png" class="bf-top" alt="Black Friday">
+            </div>
+
+            <!-- Conteúdo principal -->
+            <div class="hero-main">
+                <!-- ESQUERDA - MALA + AVIÕES -->
+                <div class="hero-left">
+                    <div class="hero-art">
+                        <img src="images/aviao-responsivo.png" class="hero-mala" alt="Mala de viagem com aviões">
+
+                        <!-- Nuvens animadas -->
+                        <img src="images/nuvem1-maior.png" class="cloud cloud-1" alt="Nuvem">
+                        <img src="images/nuvem2-menor.png" class="cloud cloud-2" alt="Nuvem">
+                        
+
+                    </div>
+                </div>
+
+                <!-- DIREITA - TEXTO + ÍCONES + BOTÃO -->
+                <div class="hero-right">
+
+                    <div class="hero-icons-title">
+                        <img src="images/icones-whatsapp.png" class="whats-icons" alt="Ícones WhatsApp">
+                        <img src="images/grupo-exclusivo.png" class="grupo-exclusivo" alt="Grupo Exclusivo no WhatsApp">
+                    </div>
+
+                    <p class="hero-text hero-text-main">
+                        Descubra as <strong>melhores ofertas de passagens aérea</strong>s saindo de
+                        <span class="manaus-am">MANAUS-AM</span> antes de todo mundo.
+                    </p>
+
+                    <p class="hero-text hero-text-sub">
+                        A <strong>Black Friday</strong> está chegando e as promoções vão ser relâmpago — e só quem estiver no nosso
+                        <span class="destaque">GRUPO GRATUITO</span>
+                        vai receber os alertas em primeira mão.
+                    </p>
+
+                    <a href="#formulario" class="btn-yellow js-scroll">
+                        INSCREVA-SE PARA PARTICIPAR
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+<section class="form-section" id="formulario">
+    <div class="form-inner">
+
+        <form id="leadForm" class="form" action="send.php" method="POST">
+
+            <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+            <input id="telefone" name="telefone" type="text" placeholder="(92) 00000-0000" required>
+            <input id="email" name="email" type="email" placeholder="Seu melhor e-mail" required>
+            <input id="destino" name="destino" type="text" placeholder="Destino que você quer viajar em 2026" required>
+
+            <button type="submit" class="btn-green">
+                QUERO PARTICIPAR
+            </button>
+
+            <p id="formFeedback" class="form-feedback"></p>
+
+            <p class="form-terms">
+                De acordo com as Leis 12.965/2014 e 13.709/2018, autorizo Agência Passagens Relâmpago
+                a enviar notificações e concordo com a Política de Privacidade.
+            </p>
+
+        </form>
+
+    </div>
+</section>
+
+
+    <!-- ================= RODAPÉ ================= -->
+    <footer class="footer">
+
+        <div class="footer-bar">
+            <img src="images/rodape.png" class="footer-bg" alt="Faixa rodapé">
+            <img src="images/aviao-ponta-esquerda.png" class="footer-plane" alt="Avião rodapé">
+        </div>
+
+        <div class="footer-text">
+            <p>2025 © Todos os direitos reservados</p>
+            <br>
+            <p>CNPJ: 58.263.119/0001-37</p>
+            <p>RAZÃO SOCIAL: 58.263.119 ERIKSON DA SILVA ANDRADE</p>
+        </div>
+
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE (SOMENTE MOBILE) -->
+    <a href="#formulario" class="btn-float-mobile js-scroll">
+        INSCREVA-SE PARA PARTICIPAR
+    </a>
+
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html>
