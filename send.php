@@ -14,7 +14,6 @@ $mail = new PHPMailer(true);
 
 try {
 
-    // carregar configuração: manter um arquivo local com credenciais reais fora do Git
     if (file_exists(__DIR__ . '/config.local.php')) {
         require __DIR__ . '/config.local.php';
     } else {
@@ -56,7 +55,7 @@ try {
     $mail->send();
 
     // 🔥 REDIRECIONA COM ALERT & ABRE O GRUPO DO WHATSAPP
-    $grupo = "https://chat.whatsapp.com/CwuNwmqoo1M1K8Nq4IZwd5?mode=wwt";
+    $grupo = "https://chat.whatsapp.com/";
 
     echo "
         <script>
@@ -75,3 +74,4 @@ try {
     ";
     exit;
 }
+
